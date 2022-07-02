@@ -205,7 +205,7 @@ const changeLang = value => {
 }
 
 // reassign element content here with window storage API
-if (localStorage.getItem('language') {
+if (localStorage.getItem('language')) {
     span.innerText = inputCaption[`${localStorage.getItem('language')}`];
     chooseLang.innerText = labelLang[`${localStorage.getItem('language')}`];
 }
