@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Juliao Martins">
+    <meta name="keywords" content="juliao martins todo app">
+    <meta name="description" content="This website build with Django">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JM Todo</title>
+    <link rel="shortcut icon" href="{% static 'frontend/img/task.ico' %}">
+    <link rel="stylesheet" href="{% static 'frontend/css/mystyle.css' %}">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Todo</h1>
+
+        <form action="" id="myform" autocomplete="off">
+            <div class="input-box">
+                <input type="text" id="user-todo" required>
+                <span>What are doing today?</span>
+            </div>
+
+            <button type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                </svg>
+            </button>
+        </form>
+
+        <div class="todo-container" id="todo-container"></div>
+
+    </div>
+
+
+    <div class="lang-container">
+
+        <p class="choose-lang">Choose your language</p>
+
+        <div class="lang">
+
+            <div class="box-lang" onclick="changeLang('te')">
+                <img src="{% static 'frontend/img/timor-leste.png' %}" alt="{% static 'frontend/img/timor-leste.png' %}" />
+                <span>Tetum</span>
+            </div>
+
+            <div class="box-lang" onclick="changeLang('indo')">
+                <img src="{% static 'frontend/img/indonesia.png' %}" alt="{% static 'frontend/img/timor-leste.png' %}" />
+                <span>Indonesia</span>
+            </div>
+
+            <div class="box-lang" onclick="changeLang('en')">
+                <img src="{% static 'frontend/img/usa.png' %}" alt="{% static 'frontend/img/timor-leste.png' %}" />
+                <span>English</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2022. Develop by Juliao Martins&reg;</p>
+    </footer>
+    
+    <script src="{% static 'frontend/js/myscript.js' %}"></script>
+</body>
+</html>

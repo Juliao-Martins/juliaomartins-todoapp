@@ -1,0 +1,275 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+@font-face {
+    font-family: mypoppins;
+    src: url('../font/mypoppins.ttf');
+}
+
+
+body {
+    font: 1rem mypoppins, cursive;
+}
+
+
+.container {
+    width: 40%;
+    margin: 1rem auto;
+    padding: 1rem;
+    box-shadow: 1px 1px 5px rgba(0,0,0,.2), -1px -1px 5px rgba(0,0,0,.2);
+    border-radius: 3px;
+}
+
+
+.container > h1 {
+    text-align: center;
+    letter-spacing: 5px;
+    text-shadow: 0px 2px 5px rgba(0,0,0,.2), 0px 0px 5px rgba(0,0,0,.2);
+}
+
+
+.container > form {
+    width: 100%;
+    margin: 1.5rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.container > form > .input-box {
+    width: 100%;
+    position: relative;
+}
+
+.container > form > button,
+.input-box > input {
+    border: 1px solid black;
+}
+
+.container > form > button {
+    border-left: none;
+    padding: .59rem 1rem;
+    border-radius: 0px 3px 3px 0px;
+    background-color: rgba(0,0,0,.1);
+    cursor: pointer;
+}
+
+
+.container > form > button:hover {
+    background-color: rgba(0,0,0,.5);
+}
+
+
+.input-box > input,
+.input-box > span {
+    padding: .6rem 1rem;
+}
+
+.input-box > input {
+    width: 100%;
+    font-size: 1rem;
+    border-right: none;
+    border-radius: 3px 0px 0px 3px;
+}
+
+.input-box > span {
+    position: absolute;
+    left: 0;
+    transition: .5s linear;
+    border-radius: 3px;
+}
+
+
+.input-box > span {
+    color: #ddd;
+    pointer-events: none;
+}
+
+
+.input-box > input:focus {
+    outline: none;
+    border-radius: 0px;
+}
+
+
+.input-box > input:focus ~ span {
+    transform: translate(8px, -15px);
+    padding: .3rem;
+    border: 1px solid black;
+    background-color: white;
+    color: black;
+    font-size: .6rem;
+    font-weight: bold;
+}
+
+
+.move-span {
+    transform: translate(8px, -14px);
+    border: 1px solid black;
+    background-color: white;
+    color: black !important;
+    font-size: .6rem;
+    font-weight: bold;
+    padding: .3rem !important;
+}
+
+
+.todo-container {
+    width: 100%;
+    height: 60vh;
+    overflow-y: auto;
+}
+
+.todo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    margin-bottom: 1rem;
+}
+
+
+.title {
+    flex: 8;
+}
+
+
+.edit,
+.delete {
+    margin: .2rem;
+    padding: .2rem;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+
+.edit {
+    flex: 1;
+    color: lime;
+    background-color: white;
+    fill: currentColor;
+    border: 1px solid lime;
+}
+
+
+.edit:hover {
+    background-color: limegreen;
+    color: white;
+    fill: currentColor;
+}
+
+
+.delete {
+    flex: 1;
+    color: red;
+    background-color: white;
+    fill: currentColor;
+    border: 1px solid red;
+}
+
+
+.delete:hover {
+    background-color: firebrick;
+    color: white;
+    fill: currentColor;
+}
+
+
+
+.lang-container {
+    position: fixed;
+    right: .4rem;
+    bottom: 3.5rem;
+    background-color: white;
+}
+
+.lang-container,
+.box-lang {
+    box-shadow: 0px 1px 10px rgba(0,0,0,.1), 0px 0px 20px rgba(0,0,0,.1);
+    border-radius: 2px;
+}
+
+.box-lang:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,.1), 0 0 8px rgba(0,0,0,.1);
+}
+
+.choose-lang {
+    position: relative;
+    cursor: pointer;
+}
+
+.lang {
+    position: absolute;
+    top: -110px;
+    left: 0;
+    display: none;
+}
+
+.box-lang {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: .3rem 0rem;
+    cursor: pointer;
+    padding: .2rem;
+    background-color: white;
+    color: black;
+}
+
+
+.box-lang img {
+    width: 1rem;
+    margin-right: .3rem;
+}
+
+
+.choose-lang:hover + .lang {
+    display: block;
+}
+
+
+.lang:hover {
+    display: block;
+}
+
+
+footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    padding: .7rem;
+    text-align: center;
+    font-size: .7rem;
+    font-weight: bold;
+}
+
+
+@media only screen and (max-width: 900px) {
+    .container {
+        width: 75%;
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+
+    body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .container {
+        width: 98%;
+        height: 85vh;
+        margin: .5rem 0 0 0;
+    }
+}
